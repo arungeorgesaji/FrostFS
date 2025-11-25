@@ -11,11 +11,11 @@ module FrostFS
         deep_frozen: 5.0  
       },
       metadata_auto_save: true,
-      max_thaw_count: 1000
+      max_thaw_count: 1000,
+      algorithm: 'standard'
     }.freeze
 
-    attr_accessor :chill_time, :freeze_time, :deep_freeze_time, 
-                  :access_delay, :metadata_auto_save, :max_thaw_count
+    attr_accessor :chill_time, :freeze_time, :deep_freeze_time, :access_delay, :metadata_auto_save, :max_thaw_count, :algorithm
 
     def initialize(config = {})
       full_config = DEFAULT_CONFIG.merge(config)
@@ -26,6 +26,7 @@ module FrostFS
       @access_delay = full_config[:access_delay]
       @metadata_auto_save = full_config[:metadata_auto_save]
       @max_thaw_count = full_config[:max_thaw_count]
+      @algorithm = full_config[:algorithm]
     end
 
     def to_h
@@ -35,7 +36,8 @@ module FrostFS
         deep_freeze_time: @deep_freeze_time,
         access_delay: @access_delay,
         metadata_auto_save: @metadata_auto_save,
-        max_thaw_count: @max_thaw_count
+        max_thaw_count: @max_thaw_count,
+        algorithm: @algorithm
       }
     end
   end

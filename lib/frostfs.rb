@@ -11,6 +11,12 @@ require_relative 'frostfs/operations/batch_operations'
 require_relative 'frostfs/utils/logger'
 require_relative 'frostfs/utils/validator'
 require_relative 'frostfs/core/filesystem'
+require_relative 'frostfs/features/ice_crystals'
+require_relative 'frostfs/features/frost_patterns'
+require_relative 'frostfs/features/seasonal_thawing'
+require_relative 'frostfs/features/freezing_algorithms'
+require_relative 'frostfs/features/antifreeze'
+require_relative 'frostfs/features/glacier_storage'
 
 begin
   require 'thor'
