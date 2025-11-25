@@ -9,4 +9,5 @@ group :development, :test do
   gem 'pry'
   gem 'reline'
   gem 'ostruct'
+  gem 'logger'
 end

@@ -11,6 +11,7 @@ tmp/*
 *.log
 
 test_storage_*
+my_storage/*
 
 .pry_history
 .byebug_history
