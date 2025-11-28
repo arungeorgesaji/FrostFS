@@ -17,6 +17,9 @@ require_relative 'frostfs/features/seasonal_thawing'
 require_relative 'frostfs/features/freezing_algorithms'
 require_relative 'frostfs/features/antifreeze'
 require_relative 'frostfs/features/glacier_storage'
+require_relative 'frostfs/tui/app'
+require_relative 'frostfs/tui/file_info_popup' 
+require_relative 'frostfs/tui/thermal_map'
 
 begin
   require 'thor'

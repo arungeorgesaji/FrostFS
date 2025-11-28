@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+$:.unshift(File.expand_path(File.dirname(__FILE__) + '/../lib'))
+
+require 'frostfs'
+require 'frostfs/tui/app'
+
+if ARGV.empty?
+  puts "Usage: frostfs-tui <frostfs_directory>"
+  exit 1
+end
+
+fs = FrostFS::Filesystem.new(ARGV[0])
+tui = FrostFS::TUI::App.new(fs)
+tui.run
