@@ -20,6 +20,7 @@ require_relative 'frostfs/features/glacier_storage'
 require_relative 'frostfs/tui/app'
 require_relative 'frostfs/tui/file_info_popup' 
 require_relative 'frostfs/tui/thermal_map'
+require_relative 'frostfs/tui/batch_operations'
 
 begin
   require 'thor'
