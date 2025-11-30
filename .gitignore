@@ -1,5 +1,6 @@
-/vendor/bundle
+/endor/bundle
 /.bundle
+vendor/
 
 .ruby-version
 .ruby-gemset
@@ -12,6 +13,7 @@ tmp/*
 
 test_storage_*
 my_storage/*
+my_frost_storage/*
 
 .pry_history
 .byebug_history

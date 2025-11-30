@@ -37,6 +37,31 @@ module FrostFS
         Curses.close_screen
       end
 
+      def show_message(message, type = :info)
+        width = [message.length + 4, 40].max
+        height = 5
+        x = (Curses.cols - width) / 2
+        y = (Curses.lines - height) / 2
+        
+        color = case type
+                when :error then COLORS[:error]
+                when :info then COLORS[:active]
+                end
+        
+        draw_border(x, y, width, height)
+        
+        Curses.setpos(y + 2, x + 2)
+        Curses.attron(Curses::color_pair(color))
+        Curses.addstr(message)
+        Curses.attroff(Curses::color_pair(color))
+        
+        Curses.setpos(y + 4, x + 2)
+        Curses.addstr("Press any key...")
+        
+        Curses.refresh
+        Curses.getch
+      end
+
       private
 
       def setup_colors
@@ -463,31 +488,6 @@ module FrostFS
         selected_index = @active_pane == :left ? @left_cursor : @right_cursor
         
         entries[selected_index] if selected_index < entries.size
-      end
-
-      def show_message(message, type = :info)
-        width = [message.length + 4, 40].max
-        height = 5
-        x = (Curses.cols - width) / 2
-        y = (Curses.lines - height) / 2
-        
-        color = case type
-                when :error then COLORS[:error]
-                when :info then COLORS[:active]
-                end
-        
-        draw_border(x, y, width, height)
-        
-        Curses.setpos(y + 2, x + 2)
-        Curses.attron(Curses::color_pair(color))
-        Curses.addstr(message)
-        Curses.attroff(Curses::color_pair(color))
-        
-        Curses.setpos(y + 4, x + 2)
-        Curses.addstr("Press any key...")
-        
-        Curses.refresh
-        Curses.getch
       end
 
       def draw_border(x, y, width, height)
