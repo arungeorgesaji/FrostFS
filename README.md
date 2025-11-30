@@ -102,3 +102,17 @@ frostfs thaw frozen_file.txt -f ./my_frost_storage
 - Batch operations menu
 - Thermal map visualization
 - Real-time file information
+
+## Web Interface  
+
+FrostFS also provides a browser-based GUI made using Ruby on Rails for easier management and visualization of the filesystem.:
+
+https://github.com/arungeorgesaji/FrostFS-Web
+
+### Web Features
+
+- Dashboard & Analytics 
+- File Management 
+- Visualizations 
+- System Operations 
+- Monitoring 

@@ -1,6 +1,5 @@
-/endor/bundle
-/.bundle
-vendor/
+.bundle
+vendor/bundle
 
 .ruby-version
 .ruby-gemset
@@ -15,13 +14,11 @@ test_storage_*
 my_storage/*
 my_frost_storage/*
 
-.pry_history
-.byebug_history
-
-coverage/
-
 .DS_Store
 Thumbs.db
+.pry_history
+.byebug_history
+coverage/
 
 *.so
 *.o
