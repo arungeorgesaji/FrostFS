@@ -4,6 +4,16 @@ A filesystem where unused files slowly "freeze" over time. Frozen files take lon
 
 FrostFS is an intelligent filesystem that automatically manages file accessibility based on usage patterns. Just like ice forming on a cold window, files that aren't used gradually accumulate "frost" - becoming slower to access and eventually read-only until explicitly thawed.
 
+# See It In Action
+
+Watch the demo video to see a quick overview of FrostFS's basic(cli, tui and the web interface) features—without having to install anything first.
+
+<p align="center">
+  <a href="https://hc-cdn.hel1.your-objectstorage.com/s/v3/e7cab4d4cb10d4156003ff26f27171df07641e42_frostfs-demo.mp4">
+    <img src="https://dummyimage.com/800x450/000/fff&text=▶+Watch+FrostFS+Demo" alt="Watch the FrostFS Demo Video" width="600"/>
+  </a>
+</p>
+
 ### The Freezing Process:
 - **Active** → **Chilled** → **Frozen** → **Deep Frozen** → **Glacier Storage**
 
