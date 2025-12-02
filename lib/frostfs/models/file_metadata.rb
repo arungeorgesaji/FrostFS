@@ -54,8 +54,8 @@ module FrostFS
       }
     end
 
-    def self.from_h(hash)
-      metadata = new(hash['file_path'])
+    def self.from_h(file_path, hash)
+      metadata = new(file_path)  
       metadata.instance_variable_set(:@created_at, hash['created_at'])
       metadata.instance_variable_set(:@last_accessed, hash['last_accessed'])
       metadata.instance_variable_set(:@last_modified, hash['last_modified'])

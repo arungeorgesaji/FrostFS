@@ -43,7 +43,7 @@ module FrostFS
       
       data = JSON.parse(File.read(@metadata_file))
       data.each do |file_path, meta_data|
-        @metadata[file_path] = FileMetadata.from_h(meta_data)
+        @metadata[file_path] = FileMetadata.from_h(file_path, meta_data)
       end
     end
 

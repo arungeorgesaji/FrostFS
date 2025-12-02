@@ -169,10 +169,13 @@ module FrostFS
 
     private
 
-    def load_filesystem(path)
-      Filesystem.new(path)
+    def load_filesystem(path, config = {})
+      puts "DEBUG: Loading filesystem with path=#{path.inspect}, config=#{config.inspect}"
+      Filesystem.new(path, config)
     rescue => e
-      error_output("Failed to load FrostFS: #{e.message}")
+      puts "ERROR: #{e.message}"
+      puts "BACKTRACE:"
+      puts e.backtrace.first(10).join("\n")
       exit 1
     end
 

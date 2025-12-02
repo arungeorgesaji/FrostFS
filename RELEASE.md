@@ -1,7 +1,3 @@
-( Please note that I didnt include any instructions/demo or anything bcz I dont have that yet bcz of school. If you are a stonemason reviewing this pls skip this for now thanks :) asit was late and school day)
-
-# FrostFS
-
 A filesystem where unused files slowly "freeze" over time. Frozen files take longer to access, and extremely frozen files become read-only until "thawed."
 
 ## What is FrostFS?
@@ -90,6 +86,9 @@ frostfs list -f ./my_frost_storage --details
 # Show filesystem statistics
 frostfs stats -f ./my_frost_storage
 
+# Manually freeze a file
+bin/frostfs freeze frozen_file.txt -f ./my_frost_storage
+
 # Thaw frozen files
 frostfs thaw frozen_file.txt -f ./my_frost_storage
 ```
@@ -118,3 +117,9 @@ https://github.com/arungeorgesaji/FrostFS-Web
 - Visualizations 
 - System Operations 
 - Monitoring 
+
+P.S: Attached the gem file for the main frostfs library here so you can try out scripts in examples/ if you want. Use the following command to install the gem from the gem file:
+
+```bash 
+gem install frostfs-0.1.0.gem
+```

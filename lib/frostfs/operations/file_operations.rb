@@ -100,13 +100,13 @@ module FrostFS
       
       {
         path: file_path,
-        state: metadata.current_state,
+        state: metadata.current_state || :unknown,
         size: file_stat.size,
-        created_at: Time.at(metadata.created_at),
-        last_accessed: Time.at(metadata.last_accessed),
-        last_modified: Time.at(metadata.last_modified),
-        access_count: metadata.access_count,
-        thaw_count: metadata.thaw_count,
+        created_at: metadata.created_at ? Time.at(metadata.created_at) : Time.now,
+        last_accessed: metadata.last_accessed ? Time.at(metadata.last_accessed) : Time.now,
+        last_modified: metadata.last_modified ? Time.at(metadata.last_modified) : Time.now,
+        access_count: metadata.access_count || 0,
+        thaw_count: metadata.thaw_count || 0,
         access_delay: @state_manager.access_delay(file_path)
       }
     end

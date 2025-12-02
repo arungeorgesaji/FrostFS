@@ -88,6 +88,9 @@ frostfs list -f ./my_frost_storage --details
 # Show filesystem statistics
 frostfs stats -f ./my_frost_storage
 
+# Manually freeze a file
+bin/frostfs freeze frozen_file.txt -f ./my_frost_storage
+
 # Thaw frozen files
 frostfs thaw frozen_file.txt -f ./my_frost_storage
 ```

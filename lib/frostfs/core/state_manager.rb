@@ -81,7 +81,7 @@ module FrostFS
     def thaw_file(file_path)
       metadata = @metadata_manager.get(file_path)
       
-      if metadata.current_state == :deep_frozen
+      if [:chilled, :frozen, :deep_frozen].include?(metadata.current_state)
         metadata.record_thaw
         metadata.update_state(:active, 'thawed')
         @metadata_manager.save if @config.metadata_auto_save
